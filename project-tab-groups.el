@@ -98,7 +98,7 @@ a tab group that represents the selected project.
 
 Otherwise, select or create the first tab in a tab group that
 represents the selected project."
-  (let* ((result (funcall orig-fun args))
+  (let* ((result (apply orig-fun args))
          (maybe-prompt (car args))
          (project-dir (and result (project-root result))))
     (when (and maybe-prompt project-dir)
